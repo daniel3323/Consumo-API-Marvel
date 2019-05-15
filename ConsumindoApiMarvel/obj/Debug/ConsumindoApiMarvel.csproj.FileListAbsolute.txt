@@ -1,0 +1,16 @@
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\obj\Debug\ConsumindoApiMarvel.csprojAssemblyReference.cache
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\obj\Debug\ConsumindoApiMarvel.Properties.Resources.resources
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\obj\Debug\ConsumindoApiMarvel.View.frmPesquisarHeroi.resources
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\obj\Debug\ConsumindoApiMarvel.csproj.GenerateResource.cache
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\obj\Debug\ConsumindoApiMarvel.csproj.CoreCompileInputs.cache
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\bin\Debug\ConsumindoApiMarvel.exe.config
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\bin\Debug\ConsumindoApiMarvel.exe
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\bin\Debug\ConsumindoApiMarvel.pdb
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\bin\Debug\Json.dll
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\bin\Debug\Json.pdb
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\obj\Debug\ConsumindoApiMarvel.csproj.CopyComplete
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\obj\Debug\ConsumindoApiMarvel.exe
+C:\Users\danie\Desktop\ConsumindoApiMarvel\ConsumindoApiMarvel\obj\Debug\ConsumindoApiMarvel.pdb
