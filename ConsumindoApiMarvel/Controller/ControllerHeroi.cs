@@ -22,27 +22,25 @@ namespace ConsumindoApiMarvel.Controller
             {
                 using (var client = new HttpClient())
                 {
-                    //declaração das variaveis para obter autorização de acesso ao conteúdo da API
-                    string timeStamp = DateTime.Now.Ticks.ToString();
-                    string chavePublica = "0ec8e93d8ef0fd9a59353772ee651d0f";
-                    string chavePrivada = "45f01f9b175b57cf939f7927a29565a427e3b1bb";
-                    string hash = GerarHash(timeStamp, chavePublica, chavePrivada);
-
-                    //Cabeçalho
                     client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));                    
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                     //Request
-                    var response = client.GetAsync(string.Format("http://gateway.marvel.com/v1/public/characters?" + $"name={nomeHeroi}" + $"&ts={timeStamp}" + $"&apikey={chavePublica}" + $"&hash={hash}")).Result;                    
-                    string responseString = response.Content.ReadAsStringAsync().Result;
+                    HttpResponseMessage response = client.GetAsync(string.Format("http://gateway.marvel.com/v1/public/characters?" + 
+                        $"name={nomeHeroi}" + 
+                        $"&ts={DateTime.Now.Ticks.ToString()}" + 
+                        $"&apikey={"0ec8e93d8ef0fd9a59353772ee651d0f"}" + 
+                        $"&hash={GerarHash(DateTime.Now.Ticks.ToString(), "0ec8e93d8ef0fd9a59353772ee651d0f", "45f01f9b175b57cf939f7927a29565a427e3b1bb")}")).Result;
 
                     //Deserealizando conteúdo
-                    dynamic conteudoDeserialized = JsonConvert.DeserializeObject(responseString);
+                    dynamic conteudoDeserialized = JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
 
-                    //setando conteúdo no objeto "Heroi"
-                    heroi.Nome = conteudoDeserialized.data.results[0].id;
-                    heroi.Historia = conteudoDeserialized.data.results[0].description;
-                    heroi.LinkFoto = conteudoDeserialized.data.results[0].thumbnail.path + "." + conteudoDeserialized.data.results[0].thumbnail.extension;
+                    heroi = new Heroi
+                    {
+                        Nome = conteudoDeserialized.data.results[0].id,
+                        Historia = conteudoDeserialized.data.results[0].description,
+                        LinkFoto = conteudoDeserialized.data.results[0].thumbnail.path + "." + conteudoDeserialized.data.results[0].thumbnail.extension
+                    };
                 }
             }
             catch
@@ -53,7 +51,6 @@ namespace ConsumindoApiMarvel.Controller
             return heroi;
         }
 
-        //metodo para criptografar as chaves e o timestamp que liberam acesso ao conteudo da API
         private string GerarHash(string timeStamp, string chavePublica, string chavePrivada)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(timeStamp + chavePrivada + chavePublica);
